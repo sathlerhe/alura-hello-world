@@ -1,14 +1,19 @@
 import React from "react";
-import Banner from "../../components/Banner";
+import Post from "../../components/Post";
 
-// import { Container } from './styles';
+import posts from "../../json/posts.json";
+
+import styles from "./home.module.css";
 
 function Home() {
   return (
-    <main>
-      <Banner />
-      <h1>home</h1>
-    </main>
+    <ul className={styles.posts}>
+      {posts.map((post) => (
+        <li key={post.id}>
+          <Post post={post} />
+        </li>
+      ))}
+    </ul>
   );
 }
 
