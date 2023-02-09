@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Menu from "./components/Menu";
 import AboutMe from "./pages/AboutMe";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 import Post from "./pages/Post";
 
 function AppRoutes() {
@@ -15,10 +16,10 @@ function AppRoutes() {
         <Route path="/" element={<DefaultPage />}>
           <Route index element={<Home />} />
           <Route path="sobremim" element={<AboutMe />} />
-          <Route path="posts/:id" element={<Post />} />
         </Route>
+        <Route path="/posts/:id" element={<Post />} />
 
-        <Route path="*" element={<div>Página não encontrada</div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
